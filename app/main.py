@@ -5,8 +5,8 @@ def copy_file(command: str) -> None:
             and len(args) == 3
             and args[1] != args[2]):
         try:
-            with (open(args[1], "tr") as file_to_read,
-                  open(args[2], "a") as file_to_write):
+            with (open(args[1], "r") as file_to_read,
+                  open(args[2], "w") as file_to_write):
                 for line in file_to_read:
                     file_to_write.write(line)
         except FileNotFoundError:
